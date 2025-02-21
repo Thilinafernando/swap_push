@@ -12,7 +12,7 @@ LIBFT = $(LIBFTDIR)libft.a
 NAME = push_swap
 
 SRCDIR = source/
-SRC = source/operations_pt1.c utils.c moves.c
+SRC = source/operations_pt1.c utils.c moves.c parsing_utils.c push_swap.c
 
 BONUSDIR = bonus/
 BONUS = bonus/

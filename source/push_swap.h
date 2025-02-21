@@ -6,7 +6,7 @@
 /*   By: tkurukul <thilinaetoro4575@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 14:09:02 by tkurukul          #+#    #+#             */
-/*   Updated: 2025/02/11 19:42:10 by tkurukul         ###   ########.fr       */
+/*   Updated: 2025/02/21 22:58:35 by tkurukul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,9 @@ typedef struct s_swap
 
 typedef struct s_data
 {
-	int				pos_a;
-	int				index;
-	int				size_a;
-	int				size_b;
+	int				count_a;
+	int				count_b;
+	int				total;
 } t_data;
 
 # include <unistd.h>
@@ -36,6 +35,7 @@ typedef struct s_data
 # include <stdio.h>
 # include <fcntl.h>
 # include <ctype.h>
+# include <limits.h>
 
 t_swap	*fft_lstnew(int	content);
 void	free_list(t_swap *swap);
@@ -54,15 +54,30 @@ int	rr(t_swap **a, t_swap **b);
 int	rra(t_swap **swap);
 int	rrb(t_swap **swap);
 int	rrr(t_swap **a, t_swap **b);
-int	index_a(t_swap *a, int n);
+int	cal_index(t_swap *a, int n, int size);
+int	smallest(t_swap *swap);
+int	ft_abs(int x);
 int	fft_lstsize(t_swap *lst);
+void	fft_lstadd_back(t_swap **lst, t_swap *new);
+void	free_mat(char **matrix);
+char	**more_args(int argc, char **av);
+char	**two_args(char *argv);
+int	duplicates(char **matrix);
+int	check_arg(char **matrix);
+t_swap	*lstcreation(char **matrix);
 int	moves_b(t_swap *b, int i);
 int	moves_a(t_swap *a, int n);
-int	best_element(t_swap *a, t_swap *b);
-void	swap_conent(int *a, int *b);
-void	movement_a(t_swap **a, int pos_a);
-void	movement_b(t_swap **b, int index);
-void	movement(t_swap **a, t_swap **b, int index);
-void	push_all(t_swap **a, t_swap **b);
+void	store_data(int total, int count_a, int count_b, t_data *d);
+void	total_moves(t_swap *a, t_swap *b, int pos, t_data *d);
+void	best_element(t_swap **a, t_swap **b, t_data *d);
+void	movement(t_swap **a, t_swap **b, t_data *d);
+void	rrr_rr(t_swap **a, t_swap **b, t_data *d);
+void	movement_a(t_swap **a, t_data *d);
+void	movement_b(t_swap **b, t_data *d);
+void	final_rotation(t_swap **a);
+int	is_sorted(t_swap **a);
+void		two_check(t_swap **a);
+int	ft_strcmp(const char *s1, const char *s2);
+void	push_all(t_swap **a, t_swap **b, t_data *d);
 
 #endif
