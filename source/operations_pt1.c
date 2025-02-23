@@ -6,11 +6,13 @@
 /*   By: tkurukul <thilinaetoro4575@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 14:08:20 by tkurukul          #+#    #+#             */
-/*   Updated: 2025/02/11 00:00:38 by tkurukul         ###   ########.fr       */
+/*   Updated: 2025/02/23 15:50:28 by tkurukul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+// int g_move_count = 0;
 
 int	sa(t_swap *swap)
 {
@@ -21,6 +23,7 @@ int	sa(t_swap *swap)
 	tmp = swap->next->content;
 	swap->next->content = swap->content;
 	swap->content = tmp;
+	// g_move_count++;
 	ft_printf("sa\n");
 	return (1);
 }
@@ -33,11 +36,13 @@ int	sb(t_swap *swap)
 	tmp = swap->next->content;
 	swap->next->content = swap->content;
 	swap->content = tmp;
+	// g_move_count++;
 	ft_printf("sb\n");
 	return (1);
 }
 int	ss(t_swap *a, t_swap *b)
 {
+	// g_move_count++;
 	if((sa(a) == 1) && (sb(b) == 1))
 	{
 		ft_printf("ss\n");
@@ -56,6 +61,7 @@ int	pa(t_swap **a, t_swap **b)
 	*b = (*b)->next;
 	tmp->next = *a;
 	*a = tmp;
+	// g_move_count++;
 	ft_printf("pa\n");
 	return(1);
 }
@@ -69,88 +75,9 @@ int	pb(t_swap **a, t_swap **b)
 	*a = (*a)->next;
 	tmp->next = *b;
 	*b = tmp;
+	// g_move_count++;
 	ft_printf("pb\n");
 	return(1);
-}
-int	ra(t_swap **swap)
-{
-	t_swap	*last;
-	t_swap	*first;
-
-	if(!*swap|| !swap || !(*swap)->next)
-		return (-1);
-	first = *swap;
-	*swap = (*swap)->next;
-	first->next = NULL;
-	last = lastnode(swap);
-	last->next = first;
-	ft_printf("ra\n");
-	return(1);
-}
-int	rb(t_swap **swap)
-{
-	t_swap	*last;
-	t_swap	*first;
-
-	if(!*swap|| !swap || !(*swap)->next)
-		return (-1);
-	first = *swap;
-	*swap = (*swap)->next;
-	first->next = NULL;
-	last = lastnode(swap);
-	last->next = first;
-	ft_printf("rb\n");
-	return(1);
-}
-int	rr(t_swap **a, t_swap **b)
-{
-	if((ra(a) != 1) || (rb(b) != 1))
-		return(-1);
-	else
-	{
-		ft_printf("rr\n");
-		return (1);
-	}
-}
-int	rra(t_swap **swap)
-{
-	t_swap	*last;
-	t_swap	*nlast;
-
-	if(!*swap|| !swap || !(*swap)->next)
-		return (-1);
-	last = lastnode(swap);
-	nlast = lastnode1(swap);
-	last->next = *swap;
-	nlast->next = NULL;
-	*swap = last;
-	ft_printf("rra\n");
-	return(1);
-}
-int	rrb(t_swap **swap)
-{
-	t_swap	*last;
-	t_swap	*nlast;
-
-	if(!*swap|| !swap || !(*swap)->next)
-		return (-1);
-	last = lastnode(swap);
-	nlast = lastnode1(swap);
-	last->next = *swap;
-	nlast->next = NULL;
-	*swap = last;
-	ft_printf("rrb\n");
-	return(1);
-}
-int	rrr(t_swap **a, t_swap **b)
-{
-	if((rra(a) != 1) || (rrb(b) != 1))
-		return(-1);
-	else
-	{
-		ft_printf("rrr\n");
-		return (1);
-	}
 }
 
 /* int	main(void)

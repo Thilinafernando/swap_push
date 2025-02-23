@@ -6,7 +6,7 @@
 /*   By: tkurukul <thilinaetoro4575@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 18:47:34 by tkurukul          #+#    #+#             */
-/*   Updated: 2025/02/21 22:49:40 by tkurukul         ###   ########.fr       */
+/*   Updated: 2025/02/23 15:47:29 by tkurukul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ char	**two_args(char *argv)
 
 	matrix = ft_split(argv, 32);
 	if (check_arg(matrix) == 0 || duplicates(matrix) == 0)
-		return (NULL);
+		return (free_mat(matrix), NULL);
 	return (matrix);
 }
 char	**more_args(int argc, char **av)
@@ -119,11 +119,4 @@ t_swap	*lstcreation(char **matrix)
 	free_mat(matrix);
 	return (head);
 }
-void		two_check(t_swap **a)
-{
-	t_swap	*tmp;
 
-	tmp = *a;
-	if (tmp->content > tmp->next->content)
-		sa(*a);
-}

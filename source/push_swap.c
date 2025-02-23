@@ -6,7 +6,7 @@
 /*   By: tkurukul <thilinaetoro4575@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 17:49:35 by tkurukul          #+#    #+#             */
-/*   Updated: 2025/02/21 23:25:55 by tkurukul         ###   ########.fr       */
+/*   Updated: 2025/02/23 15:44:29 by tkurukul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int	main(int ac, char **av)
 	if (matrix == NULL)
 		return (write(2, "ERROR\nMATRIX", 12), 0);
 	a = lstcreation(matrix);
+	if (fft_lstsize(a) == 3)
+		return (three_args(&a), free_list(a), 0);
 	while (a && a->next->next)
 		pb(&a, &b);
 	two_check(&a);
@@ -36,6 +38,5 @@ int	main(int ac, char **av)
 	final_rotation(&a);
 	if (is_sorted(&a) == 0)
 		write(2, "ERROR\n", 6);
-	print_lst(a);
 	free_list(a);
 }

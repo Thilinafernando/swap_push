@@ -1,44 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkurukul <thilinaetoro4575@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/20 15:54:31 by tkurukul          #+#    #+#             */
-/*   Updated: 2025/02/23 13:43:39 by tkurukul         ###   ########.fr       */
+/*   Created: 2024/11/20 13:36:40 by tkurukul          #+#    #+#             */
+/*   Updated: 2024/11/27 16:16:56 by tkurukul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <string.h>
 
-int	ft_atoi(const char *str)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int	i;
-	int	result;
-	int	negative;
+	unsigned char	*str1;
+	unsigned char	*str2;
+	size_t			i;
 
+	str1 = (unsigned char *) s1;
+	str2 = (unsigned char *) s2;
 	i = 0;
-	result = 0;
-	negative = 1;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	if (str[i] == 43 || str[i] == 45)
+	while (i < n)
 	{
-		if (str[i] == 45)
-			negative = negative * -1;
+		if (str1[i] != str2[i])
+			return ((str1[i]) - (str2[i]));
 		i++;
 	}
-	while (str[i] >= 48 && str[i] <= 57)
-	{
-		result = (result * 10) + (str[i] - 48);
-		i++;
-	}
-	return (result * negative);
+	return (0);
 }
-
-/* int main(void)
+/*
+int main(void)
 {
-	char *str = "	\n -1234 5";
-	printf("%d", ft_atoi(str));
+	char *s1 = "ciao";
+	char *s2 = "ciaooo";
+
+	printf("%d", ft_memcmp(s1, s2, 5));
 } */

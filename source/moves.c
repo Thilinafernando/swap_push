@@ -6,7 +6,7 @@
 /*   By: tkurukul <thilinaetoro4575@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 19:30:58 by tkurukul          #+#    #+#             */
-/*   Updated: 2025/02/21 23:44:57 by tkurukul         ###   ########.fr       */
+/*   Updated: 2025/02/23 15:46:28 by tkurukul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,87 +105,7 @@ void	best_element(t_swap **a, t_swap **b, t_data *d)
 		tmp = tmp->next;
 	}
 }
-void	push_all(t_swap **a, t_swap **b, t_data *d)
-{
-	while (*b)
-	{
-		best_element(a, b, d);
-		movement(a, b, d);
-	}
-}
 
-void	movement(t_swap **a, t_swap **b, t_data *d)
-{
-	while (d->count_a != 0 && d->count_b != 0)
-		rrr_rr(a, b, d);
-	while (d->count_a != 0 || d->count_b != 0)
-	{
-		movement_a(a, d);
-		movement_b(b, d);
-	}
-	pa(a, b);
-	print_lst(*a);
-}
-void	rrr_rr(t_swap **a, t_swap **b, t_data *d)
-{
-	if(d->count_a > 0 && d->count_b > 0)
-	{
-		rr(a, b);
-		d->count_a--;
-		d->count_b--;
-	}
-	else if (d->count_a < 0 && d->count_b < 0)
-	{
-		rrr(a, b);
-		d->count_a++;
-		d->count_b++;
-	}
-}
-void	movement_a(t_swap **a, t_data *d)
-{
-	if (d->count_a > 0)
-	{
-		ra(a);
-		d->count_a--;
-	}
-	else if (d->count_a < 0)
-	{
-		rra(a);
-		d->count_a++;
-	}
-}
-void	movement_b(t_swap **b, t_data *d)
-{
-	if (d->count_b > 0)
-	{
-		rb(b);
-		d->count_b--;
-	}
-	else if (d->count_b < 0)
-	{
-		rrb(b);
-		d->count_b++;
-	}
-}
-
-void	final_rotation(t_swap **a)
-{
-	int	min;
-	int pos_min;
-	int	i;
-
-	i = 0;
-	min = smallest(*a);
-	pos_min = cal_index(*a, min, fft_lstsize(*a));
-	while (i < ft_abs(pos_min))
-	{
-		if (pos_min > 0)
-			ra(a);
-		else
-			rra(a);
-		i++;
-	}
-}
 
 
 // int	main(void)
