@@ -6,7 +6,7 @@
 /*   By: tkurukul <thilinaetoro4575@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 14:09:02 by tkurukul          #+#    #+#             */
-/*   Updated: 2025/02/23 16:00:18 by tkurukul         ###   ########.fr       */
+/*   Updated: 2025/02/23 23:41:13 by tkurukul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,6 @@ void		two_check(t_swap **a);
 int			ft_strcmp(const char *s1, const char *s2);
 void		push_all(t_swap **a, t_swap **b, t_data *d);
 void		three_args(t_swap **a);
+void	pb_check(t_swap *a, t_swap *b);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: tkurukul <thilinaetoro4575@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 18:47:34 by tkurukul          #+#    #+#             */
-/*   Updated: 2025/02/23 15:47:29 by tkurukul         ###   ########.fr       */
+/*   Updated: 2025/02/23 23:51:08 by tkurukul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ char	**more_args(int argc, char **av)
 t_swap	*lstcreation(char **matrix)
 {
 	int		i;
-	int	check;
+	long	check;
 	t_swap	*new_node;
 	t_swap	*head;
 
@@ -106,7 +106,7 @@ t_swap	*lstcreation(char **matrix)
 	{
 		check = ft_atoi(matrix[i]);
 		if (check > INT_MAX || check < INT_MIN)
-			return (free_mat(matrix), NULL);
+			return (free_mat(matrix), free_list(head), NULL);
 		new_node = fft_lstnew((int)check);
 		if (!new_node)
 			return(free_mat(matrix), free_list(head), NULL);

@@ -6,16 +6,16 @@
 /*   By: tkurukul <thilinaetoro4575@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 15:54:31 by tkurukul          #+#    #+#             */
-/*   Updated: 2025/02/23 13:43:39 by tkurukul         ###   ########.fr       */
+/*   Updated: 2025/02/23 23:00:33 by tkurukul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
 	int	i;
-	int	result;
+	long	result;
 	int	negative;
 
 	i = 0;
