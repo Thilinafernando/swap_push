@@ -6,7 +6,7 @@
 /*   By: tkurukul <thilinaetoro4575@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 18:47:34 by tkurukul          #+#    #+#             */
-/*   Updated: 2025/02/23 23:51:08 by tkurukul         ###   ########.fr       */
+/*   Updated: 2025/02/24 18:24:16 by tkurukul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	check_arg(char **matrix)
 				i++;
 			else
 			{
-				write(2, "ERROR\nARGS NOT VALID", 20);
+				write(2, "ERROR\n", 6);
 				return(0);
 			}
 		}
@@ -50,7 +50,7 @@ int	duplicates(char **matrix)
 		{
 			if (ft_strcmp(matrix[i], matrix[j]) == 0)
 			{
-				write(2, "ERROR\nDUPS FOUND", 16);
+				write(2, "ERROR\n", 6);
 				return(0);
 			}
 			j++;

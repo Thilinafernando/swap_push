@@ -6,7 +6,7 @@
 /*   By: tkurukul <thilinaetoro4575@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 14:09:02 by tkurukul          #+#    #+#             */
-/*   Updated: 2025/02/24 15:32:01 by tkurukul         ###   ########.fr       */
+/*   Updated: 2025/02/24 18:37:23 by tkurukul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "../libft/libft.h"
 # include "../libprintf/ft_printf.h"
+# include "../get_next_line/get_next_line.h"
 
 // extern int g_move_count;
 
@@ -45,17 +46,17 @@ void		print_lst(t_swap *swap);
 void		free_one(t_swap **swap);
 t_swap		*lastnode(t_swap **swap);
 t_swap		*lastnode1(t_swap **swap);
-int			sa(t_swap *swap);
-int			sb(t_swap *swap);
-int			ss(t_swap *a, t_swap *b);
-int			pa(t_swap **a, t_swap **b);
-int			pb(t_swap **a, t_swap **b);
+int			sa(t_swap *swap, int i);
+int			sb(t_swap *swap, int i);
+int			ss(t_swap *a, t_swap *b, int i);
+int			pa(t_swap **a, t_swap **b, int i);
+int			pb(t_swap **a, t_swap **b, int i);
 int			ra(t_swap **swap, int i);
 int			rb(t_swap **swap, int i);
-int			rr(t_swap **a, t_swap **b);
+int			rr(t_swap **a, t_swap **b, int i);
 int			rra(t_swap **swap, int i);
 int			rrb(t_swap **swap, int i);
-int			rrr(t_swap **a, t_swap **b);
+int			rrr(t_swap **a, t_swap **b, int i);
 int			cal_index(t_swap *a, int n, int size);
 int			smallest(t_swap *swap);
 int			ft_abs(int x);
@@ -81,5 +82,6 @@ void		two_check(t_swap **a);
 int			ft_strcmp(const char *s1, const char *s2);
 void		push_all(t_swap **a, t_swap **b, t_data *d);
 void		three_args(t_swap **a);
+char		**matrix_creation(int ac, char **av);
 
 #endif

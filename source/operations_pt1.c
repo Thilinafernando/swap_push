@@ -6,7 +6,7 @@
 /*   By: tkurukul <thilinaetoro4575@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 14:08:20 by tkurukul          #+#    #+#             */
-/*   Updated: 2025/02/23 15:50:28 by tkurukul         ###   ########.fr       */
+/*   Updated: 2025/02/24 18:13:37 by tkurukul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 // int g_move_count = 0;
 
-int	sa(t_swap *swap)
+int	sa(t_swap *swap, int i)
 {
 	int	tmp;
 
@@ -24,10 +24,11 @@ int	sa(t_swap *swap)
 	swap->next->content = swap->content;
 	swap->content = tmp;
 	// g_move_count++;
-	ft_printf("sa\n");
+	if (i == 1)
+		ft_printf("sa\n");
 	return (1);
 }
-int	sb(t_swap *swap)
+int	sb(t_swap *swap, int i)
 {
 	int	tmp;
 
@@ -37,21 +38,23 @@ int	sb(t_swap *swap)
 	swap->next->content = swap->content;
 	swap->content = tmp;
 	// g_move_count++;
-	ft_printf("sb\n");
+	if (i == 1)
+		ft_printf("sb\n");
 	return (1);
 }
-int	ss(t_swap *a, t_swap *b)
+int	ss(t_swap *a, t_swap *b, int i)
 {
 	// g_move_count++;
-	if((sa(a) == 1) && (sb(b) == 1))
+	if((sa(a, 0) == 1) && (sb(b, 0) == 1))
 	{
-		ft_printf("ss\n");
+		if (i == 1)
+			ft_printf("ss\n");
 		return(1);
 	}
 	else
 		return (-1);
 }
-int	pa(t_swap **a, t_swap **b)
+int	pa(t_swap **a, t_swap **b, int i)
 {
 	if (!b || !*b)
 		return(-1);
@@ -62,10 +65,11 @@ int	pa(t_swap **a, t_swap **b)
 	tmp->next = *a;
 	*a = tmp;
 	// g_move_count++;
-	ft_printf("pa\n");
+	if (i == 1)
+		ft_printf("pa\n");
 	return(1);
 }
-int	pb(t_swap **a, t_swap **b)
+int	pb(t_swap **a, t_swap **b, int i)
 {
 	if(!a || !*a)
 	return(-1);
@@ -76,7 +80,8 @@ int	pb(t_swap **a, t_swap **b)
 	tmp->next = *b;
 	*b = tmp;
 	// g_move_count++;
-	ft_printf("pb\n");
+	if (i == 1)
+		ft_printf("pb\n");
 	return(1);
 }
 

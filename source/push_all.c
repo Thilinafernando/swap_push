@@ -6,7 +6,7 @@
 /*   By: tkurukul <thilinaetoro4575@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 15:46:15 by tkurukul          #+#    #+#             */
-/*   Updated: 2025/02/23 23:50:37 by tkurukul         ###   ########.fr       */
+/*   Updated: 2025/02/24 18:15:05 by tkurukul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	three_args(t_swap **a)
 	if ((*a)->content > (*a)->next->content
 	&& (*a)->next->content > (*a)->next->next->content)
 	{
-		sa(*a);
+		sa(*a, 1);
 		rra(a, 1);
 	}
 	else if ((*a)->next->content > (*a)->content
@@ -29,12 +29,12 @@ void	three_args(t_swap **a)
 	else if ((*a)->next->content > (*a)->next->next->content
 	&& (*a)->next->next->content > (*a)->content)
 	{
-		sa(*a);
+		sa(*a, 1);
 		ra(a, 1);
 	}
 	else if ((*a)->next->next->content > (*a)->content
 	&& (*a)->content > (*a)->next->content)
-	sa(*a);
+	sa(*a, 1);
 }
 
 int	is_sorted(t_swap **a)
@@ -57,7 +57,7 @@ void		two_check(t_swap **a)
 
 	tmp = *a;
 	if (tmp->content > tmp->next->content)
-	sa(*a);
+	sa(*a, 1);
 }
 
 void	push_all(t_swap **a, t_swap **b, t_data *d)

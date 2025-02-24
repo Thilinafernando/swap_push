@@ -6,7 +6,7 @@
 /*   By: tkurukul <thilinaetoro4575@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 15:44:56 by tkurukul          #+#    #+#             */
-/*   Updated: 2025/02/24 15:34:16 by tkurukul         ###   ########.fr       */
+/*   Updated: 2025/02/24 18:14:20 by tkurukul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,13 @@ void movement(t_swap **a, t_swap **b, t_data *d)
 	{
 		if (d->count_a > 0 && d->count_b > 0)
 		{
-			rr(a, b);
+			rr(a, b, 1);
 			d->count_a--;
 			d->count_b--;
 		}
 		else if (d->count_a < 0 && d->count_b < 0)
 		{
-			rrr(a, b);
+			rrr(a, b, 1);
 			d->count_a++;
 			d->count_b++;
 		}
@@ -64,7 +64,7 @@ void movement(t_swap **a, t_swap **b, t_data *d)
 	while (d->count_b != 0)
 		movement_b(b, d);
 
-	pa(a, b);
+	pa(a, b, 1);
 }
 
 void final_rotation(t_swap **a)

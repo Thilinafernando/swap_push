@@ -6,7 +6,7 @@
 /*   By: tkurukul <thilinaetoro4575@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 15:48:44 by tkurukul          #+#    #+#             */
-/*   Updated: 2025/02/23 15:49:35 by tkurukul         ###   ########.fr       */
+/*   Updated: 2025/02/24 18:10:14 by tkurukul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,14 +48,15 @@ int	rb(t_swap **swap, int i)
 	return(1);
 }
 
-int	rr(t_swap **a, t_swap **b)
+int	rr(t_swap **a, t_swap **b, int i)
 {
 	// g_move_count--;
 	if((ra(a, 0) != 1) || (rb(b, 0) != 1))
 		return(-1);
 	else
 	{
-		ft_printf("rr\n");
+		if (i == 1)
+			ft_printf("rr\n");
 		return (1);
 	}
 }

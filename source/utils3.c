@@ -6,7 +6,7 @@
 /*   By: tkurukul <thilinaetoro4575@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 15:53:13 by tkurukul          #+#    #+#             */
-/*   Updated: 2025/02/23 15:54:26 by tkurukul         ###   ########.fr       */
+/*   Updated: 2025/02/24 18:57:55 by tkurukul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,4 +67,15 @@ int	ft_strcmp(const char *s1, const char *s2)
 		s2++;
 	}
 	return ((unsigned char)*s1 - (unsigned char)*s2);
+}
+
+char	**matrix_creation(int ac, char **av)
+{
+	char	**matrix;
+
+	if (ac == 2)
+		matrix = two_args(av[1]);
+	else
+		matrix = more_args(ac, av);
+	return (matrix);
 }
