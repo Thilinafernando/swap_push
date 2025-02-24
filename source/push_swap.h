@@ -6,7 +6,7 @@
 /*   By: tkurukul <thilinaetoro4575@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 14:09:02 by tkurukul          #+#    #+#             */
-/*   Updated: 2025/02/23 23:41:13 by tkurukul         ###   ########.fr       */
+/*   Updated: 2025/02/24 15:32:01 by tkurukul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,6 @@ void		store_data(int total, int count_a, int count_b, t_data *d);
 void		total_moves(t_swap *a, t_swap *b, int pos, t_data *d);
 void		best_element(t_swap **a, t_swap **b, t_data *d);
 void		movement(t_swap **a, t_swap **b, t_data *d);
-void		rrr_rr(t_swap **a, t_swap **b, t_data *d);
 void		movement_a(t_swap **a, t_data *d);
 void		movement_b(t_swap **b, t_data *d);
 void		final_rotation(t_swap **a);
@@ -82,6 +81,5 @@ void		two_check(t_swap **a);
 int			ft_strcmp(const char *s1, const char *s2);
 void		push_all(t_swap **a, t_swap **b, t_data *d);
 void		three_args(t_swap **a);
-void	pb_check(t_swap *a, t_swap *b);
 
 #endif
