@@ -6,7 +6,7 @@
 /*   By: tkurukul <thilinaetoro4575@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 17:32:08 by tkurukul          #+#    #+#             */
-/*   Updated: 2025/02/24 19:27:59 by tkurukul         ###   ########.fr       */
+/*   Updated: 2025/02/24 19:41:36 by tkurukul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,6 @@ int	main(int ac, char **av)
 		str = get_next_line(0);
 	}
 	free(str);
-	return(last(a), 0);
+	last(a);
 	return (free_list(a), free_list(b), 0);
 }
